@@ -262,8 +262,8 @@ print_array_full:
     
     push rcx            ; Salva RCX na pilha para preservar o índice do loop
     
-    ; ፤ CORREÇÃO: Usar movsx para carregar o número de 32 bits (dword) do array para o registrador de 64 bits (RAX)
-    ; preservando o sinal. Isso é crucial para números negativos.
+    ; CORREÇÃO: Usar movsx para carregar o número de 32 bits (dword) do array para o registrador de 64 bits (RAX)
+    ; preservando o sinal, pra funcionar com negativos
     movsx rax, dword [array + ecx*4] 
     
     call print_number   ; Chama a função 'print_number' para imprimir o elemento atual do array
@@ -357,7 +357,7 @@ _start:
     
     push rcx            ; Salva RCX na pilha (preserva o índice do array)
 
-    ; ፤ CORREÇÃO: Usar movsx para carregar o número de 32 bits (dword) do array para o registrador de 64 bits (RAX)
+    ; CORREÇÃO: Usar movsx para carregar o número de 32 bits (dword) do array para o registrador de 64 bits (RAX)
     ; e estender o sinal para RAX. A função is_prime espera seu argumento em EAX.
     movsx rax, dword [array + ecx*4] 
     
@@ -367,7 +367,7 @@ _start:
     cmp eax, 1          ; Compara o resultado de is_prime com 1
     jne .skip_print     ; Se o resultado não for 1 (não é primo), pula para .skip_print
     
-    ; ፤ CORREÇÃO: Se o número for primo, carregue-o novamente em RAX usando movsx antes de chamar print_number.
+    ; CORREÇÃO: Se o número for primo, carregue-o novamente em RAX usando movsx antes de chamar print_number.
     ; Isso garante que o valor correto (incluindo o sinal) seja passado para a função de impressão.
     movsx rax, dword [array + ecx*4] 
     
