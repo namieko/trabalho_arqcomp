@@ -66,7 +66,7 @@ section .text
 
 
 ;----------------------------------------------------------------------------------------
-; PROCEDURE string_to_int
+; string_to_int:
 ; Converte uma string numérica (apontada por RSI) em um inteiro (retornado em RAX).
 ; Suporta números negativos.
 ;----------------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ string_to_int:
     ret                 ; Retorna da função; o inteiro convertido está em RAX
 
 ;----------------------------------------------------------------------------------------
-; PROCEDURE insertion_sort
+; insertion_sort:
 ; Ordena um array de 'n' inteiros usando o algoritmo Insertion Sort.
 ; O array é armazenado na seção .bss sob o rótulo 'array'.
 ;----------------------------------------------------------------------------------------
@@ -143,10 +143,9 @@ insertion_sort:
     ret                 ; Retorna da função
 
 ;----------------------------------------------------------------------------------------
-; PROCEDURE is_prime
+; is_prime:
 ; Verifica se um número inteiro (passado em EAX) é primo.
 ; Retorna 1 em EAX se for primo, 0 se não for.
-; Não suporta números negativos (considera-os não primos).
 ;----------------------------------------------------------------------------------------
 is_prime:
     push rcx            ; Salva o valor de RCX na pilha (preserva o registrador para o chamador)
@@ -193,9 +192,8 @@ is_prime_done:
     ret                 ; Retorna da função
 
 ;----------------------------------------------------------------------------------------
-; PROCEDURE print_number
+; print_number:
 ; Converte um inteiro (passado em RAX) em uma string e a imprime na saída padrão.
-; Suporta números positivos e negativos.
 ;----------------------------------------------------------------------------------------
 print_number:
     push rbx            ; Salva RBX na pilha (será usado para o ponteiro do buffer)
@@ -251,7 +249,7 @@ print_number:
     ret                 ; Retorna da função
 
 ;----------------------------------------------------------------------------------------
-; PROCEDURE print_array_full
+; print_array_full
 ; Imprime todos os elementos do array 'array', separados por um espaço, seguidos por uma nova linha.
 ;----------------------------------------------------------------------------------------
 print_array_full:
@@ -287,7 +285,7 @@ print_array_full:
     ret                 ; Retorna da função
     
 ;----------------------------------------------------------------------------------------
-; PROCEDURE _start
+; _start
 ; Ponto de entrada principal do programa.
 ; Gerencia o fluxo de execução: leitura, ordenação e impressão.
 ;----------------------------------------------------------------------------------------
