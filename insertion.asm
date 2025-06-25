@@ -1,6 +1,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;
 ;    Trabalho de Arquitetura de Computadores
+;    Alunas: Gabriela Jahn Henning
+;            Namie Miquitera Yamada
 ;   
 ;    Assembly x86-64 com sintaxe Intel
 ;    Montador NASM e ligador ld
@@ -8,6 +10,7 @@
 ;    PARA COMPILAR E LINKAR:
 ;    nasm -felf64 insertion.asm -o trabalho.o
 ;    ld trabalho.o -o trabalho
+;    ./trabalho
 ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
