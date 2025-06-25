@@ -255,7 +255,7 @@ print_number:
     ret                 ; Retorna da função
 
 ;----------------------------------------------------------------------------------------
-; print_array_full
+; print_array_full:
 ; Imprime todos os elementos do array 'array', separados por um espaço, seguidos por uma nova linha.
 ;----------------------------------------------------------------------------------------
 print_array_full:
@@ -291,7 +291,7 @@ print_array_full:
     ret                 ; Retorna da função
     
 ;----------------------------------------------------------------------------------------
-; _start
+; _start:
 ; Ponto de entrada principal do programa.
 ; Gerencia o fluxo de execução: leitura, ordenação e impressão.
 ;----------------------------------------------------------------------------------------
